@@ -30,7 +30,8 @@ export class App extends Component {
 
     console.log(evt.target.value);
     Meteor.call("twitter.stream", evt.target.value);
-    this.resetCanvas();
+    this.resetCanvas1();
+    this.resetCanvas2();
 
   }
 
@@ -49,16 +50,25 @@ export class App extends Component {
     });
   }
 
-  setResetCanvas(c) {
-    this.resetCanvas = c;
+  setResetCanvas1(c) {
+    this.resetCanvas1 = c;
   }
 
-  addTweet() {
-    this.setState({ "howMany": Math.min(10, this.state.howMany+1) }); 
+  setResetCanvas2(c) {
+    this.resetCanvas2 = c;
   }
 
-  restTweet() {
-    this.setState({ "howMany": Math.max(0, this.state.howMany-1) });
+  getSelectedTweet() {
+    return this.selectedTweet;
+  }
+
+  setSelectedTweet(e) {
+    this.selectedTweet = e;
+  }
+
+  newTweet() {
+    this.tweet_results.forceUpdate();
+    this.selected_overlay.forceUpdate();
   }
 
   render() {
@@ -85,13 +95,15 @@ export class App extends Component {
         <div className="row">
           <div className="map col-xs-9">
             <ColombiaMap width="500" heigth="500" setProjection={this.setProjection.bind(this)} />
-            <Overlay setResetCanvas={this.setResetCanvas.bind(this)} width="500" heigth="500" tweets={this.props.tweets} getProjection={ this.getProjection.bind(this) } />
+            <Overlay setResetCanvas={this.setResetCanvas1.bind(this)} width="500" heigth="500" tweets={this.props.tweets} getProjection={ this.getProjection.bind(this) } />
+            <Overlay ref={ (r)=> {this.selected_overlay = r;} } setResetCanvas={this.setResetCanvas2.bind(this)} width="500" heigth="500" getProjection={ this.getProjection.bind(this) } getSelectedTweet={this.getSelectedTweet.bind(this)} />
           </div>
           <div className="tweets col-xs-3">
-            <h2>Some Tweets:</h2>
+            <h2>Random Tweets:</h2>
+            <button onClick={this.newTweet.bind(this)}>New</button>
             {this.props && this.props.tweets && this.props.tweets.length > 0 ?
-              <TweetsResults tweets={this.props.tweets} quantity={this.state.howMany}/>:
-              <p>Enter a query</p>
+              <TweetsResults ref={ (r)=> {this.tweet_results = r;} } tweets={this.props.tweets} setSelectedTweet={this.setSelectedTweet.bind(this)} />:
+              <p></p>
             }
           </div>
         </div>

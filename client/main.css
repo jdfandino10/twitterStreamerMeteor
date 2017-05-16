@@ -38,19 +38,19 @@ text.big-text{
   pointer-events: none;
 }
 
+.canvas.selected {
+  top: -1005px;
+}
+
 .map {
-	text-align: center;
-	height: 500px;
+  text-align: center;
+  height: 500px;
 }
 
 .tweet {
-	border: 2px solid #8adbf7;
-	border-radius: 10px;
-	padding: 5px;
-	margin: 5px;
-	width: 110%;
-}
-
-.tweets {
-
+  border: 2px solid #8adbf7;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  width: 110%;
 }
