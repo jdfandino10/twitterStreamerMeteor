@@ -1,6 +1,6 @@
 # twitterStreamerMeteor - Exam
 
-A webapp that shows on a map the locations of tweets related to a subject. It also has, as a creative addon, **the hability to show a random tweet higlighting its point on the map**. It requires you to setup your credentials on the server using environment variables:
+A webapp that shows on a map the locations of tweets related to a subject. It also has, as a creative addon, **the hability to show a random tweet highlighting its point on the map**. (Here)[https://colombia-tweet-streamer.herokuapp.com/] you can see a working demo. It requires you to setup your credentials on the server using environment variables:
 
 ```
 export TWITTER_CONSUMER_KEY="yourCredentialsHere"
