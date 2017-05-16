@@ -28,3 +28,11 @@ text.big-text{
 .effect-layer text, text.dummy-text{
   font-size: 12px;
 }
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 98px;
+  left: 9px;
+}
