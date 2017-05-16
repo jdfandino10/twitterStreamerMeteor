@@ -37,9 +37,8 @@ export default class Overlay extends Component {
 	point(x, y, context) {
 		context.fillStyle = "#ff2626"; // Red color
   		context.beginPath();
-  		context.arc(x, y, 1, 0, 2 * Math.PI, true);
+  		context.arc(x, y, 2, 0, 2 * Math.PI, true);
   		context.fill();
-  		console.log("pinta punto: "+x+" "+y);
 	}
 
 	render() {

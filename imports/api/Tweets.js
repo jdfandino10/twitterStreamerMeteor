@@ -14,7 +14,7 @@ export const Tweets = new Mongo.Collection("tweets");
 // Twitter streamer should run only on the server
 if (Meteor.isServer) {
   Meteor.publish("tweets", function tweetsPublication() {
-    return Tweets.find({ coordinates: { $ne: null } }, {sort: {created_at: -1}, limit:10});
+    return Tweets.find({ coordinates: { $ne: null } }, {sort: {created_at: -1}, limit:20000});
   });
 
   // This method will trigger the streamer
@@ -48,6 +48,9 @@ if (Meteor.isServer) {
         console.log(error);
         throw Meteor.Error(error);
       });
-    }// twitter.stream
+    },// twitter.stream
+    "twitter.firstDelete"(query) {
+      Tweets.remove({});
+    }
   }); //Meteor.methods
 }
