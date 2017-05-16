@@ -1,6 +1,44 @@
 /* CSS declarations go here */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Josefin+Slab|Arvo|Lato|Vollkorn|Abril+Fatface|Old+Standard+TT|Droid+Sans|Lobster|Inconsolata|Montserrat|Playfair+Display|Karla|Alegreya|Libre+Baskerville|Merriweather|Lora|Archivo+Narrow|Neuton|Signika|Questrial|Fjalla+One|Bitter|Varela+Round);
 
+* {
+  font-family: Open Sans;
+}
+
+label {
+	margin-right: 5px;
+}
+input[type=text] {
+	width: 400px;
+}
+input {
+	border-radius: 5px;
+	border-color: #78d5f5;
+	border-style: solid;
+}
+
+button {
+  background: transparent;
+  color: white;
+  background-color: #78d5f5;
+  border-style: solid;
+  border-radius: 5px;
+  margin-left: 5px;
+  font-family: Baloo;
+}
+
+button:hover {
+  background-color: #68a5f5; 
+}
+
+button:active {
+  background-color: #5865f5; 
+}
+
+h1, h2, h3, h4, h5, h6, label {
+  font-family: Baloo;
+}
+
 .background {
   fill: #eee;
   pointer-events: all;
@@ -48,9 +86,33 @@ text.big-text{
 }
 
 .tweet {
-  border: 2px solid #8adbf7;
+  border: 2px solid #78d5f5;
   border-radius: 10px;
   padding: 5px;
   margin: 5px;
-  width: 110%;
+  width: 100%;
+}
+
+.title {
+  background-color: #78d5f5;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  top: -10px;
+  position: relative;
+}
+
+.tweet-img {
+	vertical-align: middle;
+}
+
+.inline {
+	display: inline;
+}
+
+.random-and-button {
+	padding-top: 20px;
 }

@@ -24,9 +24,15 @@ export default class TweetResults extends Component {
     let list = [];
     let used = [];
     let rnd = Math.floor((Math.random() * (this.props.tweets.length)));
-    list.push(this.props.tweets[rnd]);  
+    while(this.props.length > 1 && this.lastTweet && this.lastTweet.id == this.props.tweets[rnd].id) {
+      rnd =  Math.floor((Math.random() * (this.props.tweets.length)));
+    }
+    list.push(this.props.tweets[rnd]);
+    this.lastTweet = this.props.tweets[rnd];
     return list;
   }
+
+  notSame
 
   render() {
     return (
