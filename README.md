@@ -1,4 +1,6 @@
-# twitterStreamerMeteor
+# twitterStreamerMeteor Colombia
+
+Web Dev final exam. IS ON byLocation BRANCH.
 
 A simple boilerplate for a Meteor 1.4 Twitter streamer application with React. Uses the twitter [npm](https://www.npmjs.com/package/twitter) module for connecting to twitter. It requires you to setup your credentials on the server using environment variables:
 
